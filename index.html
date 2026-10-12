@@ -13,7 +13,6 @@
     
     <style>
         :root {
-            /* PDF Inspired Vibrant Palette */
             --navy-primary: #1B365D;
             --navy-dark: #0A192F;
             --navy-light: #2A4B7C;
@@ -22,6 +21,7 @@
             --coral-hover: #D62839;
             --gold-accent: #F4A261;
             --yellow-accent: #E9C46A;
+            --blue-accent: #0077B6;
             
             --bg-page: #F1F5F9;
             --bg-card: #FFFFFF;
@@ -36,7 +36,7 @@
             --radius-md: 16px;
             --radius-lg: 24px;
             
-            --shadow-card: 0 10px 25px -5px rgba(27, 54, 93, 0.08), 0 8px 10px -6px rgba(27, 54, 93, 0.04);
+            --shadow-card: 0 10px 25px -5px rgba(27, 54, 93, 0.08);
             --shadow-hover: 0 20px 30px -10px rgba(27, 54, 93, 0.15);
         }
 
@@ -54,7 +54,7 @@
             font-family: 'Noto Sans KR', sans-serif;
             background-color: var(--bg-page);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -72,7 +72,7 @@
             background: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 2px solid var(--coral-accent);
+            border-bottom: 3px solid var(--coral-accent);
         }
 
         .nav-container {
@@ -116,14 +116,14 @@
             color: var(--yellow-accent);
         }
 
-        /* PAGE CONTAINER */
+        /* CONTAINER */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 7rem 2rem 4rem;
+            padding: 6.5rem 2rem 4rem;
             display: flex;
             flex-direction: column;
-            gap: 3.5rem;
+            gap: 3rem;
         }
 
         /* SLIDE CARD BLOCK */
@@ -132,12 +132,11 @@
             border-radius: var(--radius-lg);
             border: 1px solid rgba(203, 213, 225, 0.8);
             box-shadow: var(--shadow-card);
-            padding: 3rem;
+            padding: 2.8rem;
             position: relative;
             overflow: hidden;
         }
 
-        /* PDF ACCENT DECORATIVE SLASHES */
         .slide-card::before {
             content: '////';
             position: absolute;
@@ -155,15 +154,11 @@
             background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 70%, var(--navy-light) 100%);
             color: #FFFFFF;
             border: none;
-            padding: 4rem 3.5rem;
+            padding: 3.5rem 3rem;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
-        }
-
-        .hero-card::before {
-            color: rgba(255, 255, 255, 0.15);
         }
 
         .hero-tag {
@@ -177,72 +172,78 @@
             font-weight: 800;
             padding: 0.4rem 1rem;
             border-radius: 50px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .hero-title {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 900;
             line-height: 1.3;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             word-break: keep-all;
         }
 
         .hero-title .highlight {
             color: var(--yellow-accent);
-            background: linear-gradient(120deg, rgba(244, 162, 97, 0.2) 0%, rgba(244, 162, 97, 0) 100%);
-            padding: 0 4px;
         }
 
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #E2E8F0;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            word-break: keep-all;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+            line-height: 1.5;
         }
 
-        .hero-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
+        /* KPI DASHBOARD */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .hero-pill {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-            padding: 0.6rem 1.2rem;
+        .kpi-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
+            padding: 1rem;
+            text-align: center;
+            backdrop-filter: blur(6px);
+        }
+
+        .kpi-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--yellow-accent);
+            line-height: 1.1;
+        }
+
+        .kpi-label {
+            font-size: 0.8rem;
+            color: #CBD5E1;
+            font-weight: 600;
+            margin-top: 0.3rem;
         }
 
         .hero-side-box {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: var(--radius-md);
-            padding: 2.2rem;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            padding: 2rem;
         }
 
         .hero-side-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 800;
             color: var(--yellow-accent);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.5rem;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -252,69 +253,70 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .hero-strength-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
         }
 
         .hero-strength-icon {
             background: var(--coral-accent);
             color: #FFFFFF;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             flex-shrink: 0;
-            margin-top: 2px;
         }
 
         .hero-strength-text strong {
             display: block;
             color: #FFFFFF;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
         }
 
         .hero-strength-text span {
             color: #94A3B8;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         /* SECTION HEADER */
         .sec-header {
             display: flex;
             align-items: baseline;
-            gap: 14px;
+            gap: 12px;
             border-bottom: 3px solid var(--navy-primary);
-            padding-bottom: 0.8rem;
-            margin-bottom: 2.2rem;
+            padding-bottom: 0.6rem;
+            margin-bottom: 2rem;
         }
 
         .sec-num {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 900;
             color: var(--coral-accent);
-            letter-spacing: -1px;
         }
 
         .sec-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--navy-primary);
         }
 
         .sec-sub {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             margin-left: auto;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* 01. ABOUT MATRIX */
@@ -328,61 +330,53 @@
             background: var(--bg-card-alt);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 1.8rem 1.4rem;
+            padding: 1.5rem 1.2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .about-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-card);
-            border-color: var(--navy-primary);
         }
 
         .card-step-num {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 900;
             color: var(--navy-primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
         .card-step-num i {
             color: var(--coral-accent);
-            font-size: 1.1rem;
         }
 
         .card-title {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--navy-primary);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
         }
 
         .card-text {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-body);
-            line-height: 1.55;
+            line-height: 1.45;
+            font-weight: 500;
         }
 
         .tag-wrap {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 1rem;
+            gap: 0.35rem;
+            margin-top: 0.8rem;
         }
 
         .chip-tag {
             background: var(--navy-primary);
             color: #FFFFFF;
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 0.25rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
             border-radius: 4px;
         }
 
@@ -390,7 +384,7 @@
             background: var(--coral-accent);
         }
 
-        /* 02. SKILLS MATRIX */
+        /* 02. SKILLS GRAPH BARS */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -402,7 +396,7 @@
             border: 1px solid var(--border-color);
             border-left: 5px solid var(--navy-primary);
             border-radius: var(--radius-md);
-            padding: 1.6rem;
+            padding: 1.5rem;
         }
 
         .skill-panel.accent {
@@ -410,37 +404,50 @@
         }
 
         .skill-head {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--navy-primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .skill-pills {
+        .skill-bar-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .skill-bar-info {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .spill {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
+            justify-content: space-between;
+            font-size: 0.83rem;
+            font-weight: 700;
             color: var(--text-dark);
-            font-size: 0.88rem;
-            font-weight: 600;
-            padding: 0.4rem 0.9rem;
-            border-radius: var(--radius-sm);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            margin-bottom: 0.3rem;
         }
 
-        /* 03. PROJECTS & GALLERIES */
+        .skill-bar-bg {
+            background: #E2E8F0;
+            height: 9px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--navy-primary), var(--blue-accent));
+            border-radius: 10px;
+        }
+
+        .skill-bar-fill.coral {
+            background: linear-gradient(90deg, var(--coral-accent), var(--gold-accent));
+        }
+
+        /* 03. PROJECTS VISUAL CARDS */
         .project-list {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 2.2rem;
         }
 
         .project-item {
@@ -454,16 +461,16 @@
         .project-item-header {
             background: var(--navy-primary);
             color: #FFFFFF;
-            padding: 1.2rem 2rem;
+            padding: 1rem 1.8rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .project-item-title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 800;
             display: flex;
             align-items: center;
@@ -472,94 +479,93 @@
 
         .project-item-tags {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .ptag-badge {
             background: var(--coral-accent);
             color: #FFFFFF;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            padding: 0.25rem 0.7rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 50px;
         }
 
         .project-item-body {
-            padding: 2rem;
+            padding: 1.8rem;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
         }
 
         .project-info-sec {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .project-label {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 800;
             color: var(--coral-accent);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.4rem;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.3rem;
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        .project-desc-text {
-            font-size: 0.95rem;
-            color: var(--text-body);
-            line-height: 1.6;
-        }
-
-        .role-bullets {
+        .clause-bullets {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
-        .role-bullets li {
-            font-size: 0.9rem;
+        .clause-bullets li {
+            font-size: 0.88rem;
+            font-weight: 600;
             color: var(--text-dark);
             position: relative;
             padding-left: 1.2rem;
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
-        .role-bullets li::before {
-            content: '■';
+        .clause-bullets li::before {
+            content: '▪';
             position: absolute;
             left: 0;
             color: var(--navy-primary);
-            font-size: 0.7rem;
-            top: 2px;
+            font-size: 0.9rem;
+            top: -1px;
         }
 
         .insight-card-box {
             background: #F8FAFC;
             border-left: 4px solid var(--gold-accent);
             border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            padding: 1.2rem 1.5rem;
+            padding: 1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .insight-bullets {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            gap: 0.45rem;
         }
 
         .insight-bullets li {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            font-weight: 600;
             color: var(--text-body);
             position: relative;
-            padding-left: 1.3rem;
-            line-height: 1.5;
+            padding-left: 1.2rem;
+            line-height: 1.45;
         }
 
         .insight-bullets li::before {
@@ -570,21 +576,48 @@
             font-weight: 900;
         }
 
+        .project-visual-badges {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .pbadge-box {
+            background: var(--navy-primary);
+            color: #FFFFFF;
+            padding: 0.5rem 0.8rem;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .pbadge-box.coral {
+            background: var(--coral-accent);
+        }
+
+        .pbadge-box i {
+            color: var(--yellow-accent);
+        }
+
         /* PROJECT GALLERY GRID */
         .project-gallery-sec {
             border-top: 1px solid var(--border-color);
             background: #F8FAFC;
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 1.8rem;
         }
 
         .gallery-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 800;
             color: var(--navy-primary);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -592,8 +625,8 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 0.9rem;
         }
 
         .gallery-card {
@@ -602,36 +635,27 @@
             border-radius: var(--radius-sm);
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            position: relative;
+            transition: transform 0.25s ease;
         }
 
         .gallery-card:hover {
-            transform: scale(1.03);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
-            z-index: 10;
         }
 
-        .gallery-card img {
+        .gallery-card img, .gallery-card video {
             width: 100%;
-            height: 160px;
+            height: 150px;
             object-fit: cover;
             display: block;
-        }
-
-        .gallery-card video {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
             background: #000;
-            display: block;
         }
 
         .gallery-card-caption {
-            padding: 0.5rem 0.8rem;
-            font-size: 0.78rem;
+            padding: 0.4rem 0.6rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--text-muted);
+            color: var(--text-dark);
             background: #FFFFFF;
             text-align: center;
             border-top: 1px solid #F1F5F9;
@@ -641,48 +665,52 @@
         .timeline-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.8rem;
         }
 
         .timeline-col {
             background: var(--bg-card-alt);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 2rem;
+            padding: 1.8rem;
         }
 
         .timeline-col-head {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--navy-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
         }
 
         .timeline-list {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .timeline-row {
             display: flex;
-            gap: 1rem;
+            gap: 0.9rem;
             align-items: flex-start;
+            background: #FFFFFF;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
         }
 
         .timeline-step {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 900;
             background: var(--navy-primary);
             color: #FFFFFF;
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -696,48 +724,48 @@
         }
 
         .timeline-content-title {
-            font-size: 0.98rem;
+            font-size: 0.92rem;
             font-weight: 800;
             color: var(--text-dark);
         }
 
         .timeline-content-sub {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-top: 0.15rem;
+            margin-top: 0.1rem;
+            font-weight: 600;
         }
 
-        /* 05. CREDENTIALS & AWARDS LIST */
+        /* 05. CREDENTIALS LIST */
         .simple-table-list {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 0.7rem;
         }
 
         .simple-table-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.4rem;
+            padding: 0.8rem 1.2rem;
             background: #FFFFFF;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-sm);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .row-text {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--navy-primary);
         }
 
         .row-tag {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             background: #E2E8F0;
             color: var(--navy-primary);
-            padding: 0.25rem 0.7rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
         }
 
@@ -746,27 +774,26 @@
             background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
             color: #FFFFFF;
             border-radius: var(--radius-lg);
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
-            box-shadow: var(--shadow-hover);
         }
 
         .contact-card h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .contact-card p {
             color: #CBD5E1;
-            font-size: 1rem;
-            margin-bottom: 2.2rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
         }
 
         .contact-btn-group {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
@@ -774,35 +801,33 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(8px);
-            padding: 0.9rem 1.8rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             color: #FFFFFF;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.25s ease;
+            gap: 8px;
+            transition: all 0.2s ease;
         }
 
         .contact-btn:hover {
             background: var(--coral-accent);
             border-color: var(--coral-accent);
-            transform: translateY(-3px);
         }
 
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 2rem 1rem;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
 
         @media (max-width: 992px) {
             .hero-card {
                 grid-template-columns: 1fr;
-                padding: 3rem 2rem;
             }
             .about-matrix {
                 grid-template-columns: repeat(2, 1fr);
@@ -813,11 +838,14 @@
             .timeline-grid {
                 grid-template-columns: 1fr;
             }
+            .kpi-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         @media (max-width: 640px) {
             .slide-card {
-                padding: 2rem 1.2rem;
+                padding: 1.8rem 1.2rem;
             }
             .about-matrix {
                 grid-template-columns: 1fr;
@@ -863,12 +891,22 @@
                     기술로 <span class="highlight">느낌표</span>를 만듭니다.
                 </h1>
                 <p class="hero-desc">
-                    덜 힘들고 더 잘하는 방법을 찾아 데이터까지 파고드는 효율 추구형 인재.<br>
-                    현장의 고민을 스포츠테크 분야의 더 나은 제품과 서비스로 연결합니다.
+                    데이터 분석 기반의 현장 문제 해결 및 최적화 연구 · 서비스 기획
                 </p>
-                <div class="hero-pills">
-                    <div class="hero-pill"><i class="fa-solid fa-graduation-cap"></i> 서경대학교 스포츠앤테크놀로지학과</div>
-                    <div class="hero-pill"><i class="fa-solid fa-crosshairs"></i> 희망 직무: 연구 · 데이터 분석 · 콘텐츠 기획</div>
+                
+                <div class="kpi-grid">
+                    <div class="kpi-box">
+                        <div class="kpi-num">5+</div>
+                        <div class="kpi-label">주요 프로젝트</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-num">200+</div>
+                        <div class="kpi-label">행사 참여 시니어</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-num">4회</div>
+                        <div class="kpi-label">장학 수혜 실적</div>
+                    </div>
                 </div>
             </div>
 
@@ -880,22 +918,22 @@
                     <li class="hero-strength-item">
                         <div class="hero-strength-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                         <div class="hero-strength-text">
-                            <strong>섬세함</strong>
-                            <span>데이터와 문제점의 원인을 정밀하게 포착</span>
+                            <strong>섬세한 데이터 관찰력</strong>
+                            <span>원인 분석 및 개선안 도출</span>
                         </div>
                     </li>
                     <li class="hero-strength-item">
                         <div class="hero-strength-icon"><i class="fa-solid fa-rocket"></i></div>
                         <div class="hero-strength-text">
-                            <strong>실행력</strong>
-                            <span>아이디어를 직접 프로토타입/행사로 구현</span>
+                            <strong>강력한 기획 실행력</strong>
+                            <span>앱 프로토타입 & 대규모 행사 직관화</span>
                         </div>
                     </li>
                     <li class="hero-strength-item">
                         <div class="hero-strength-icon"><i class="fa-solid fa-heart"></i></div>
                         <div class="hero-strength-text">
-                            <strong>성실 & 배려</strong>
-                            <span>사용자 니즈 파악 및 원활한 소통 역량</span>
+                            <strong>성실성 & 협업 배려</strong>
+                            <span>타겟 맞춤 커뮤니케이션</span>
                         </div>
                     </li>
                 </ul>
@@ -907,27 +945,27 @@
             <div class="sec-header">
                 <span class="sec-num">01.</span>
                 <h2 class="sec-title">About Me</h2>
-                <span class="sec-sub">스포츠 현장과 데이터를 잇는 가치관</span>
+                <span class="sec-sub">핵심 가치관 및 역량 지표</span>
             </div>
 
             <div class="about-matrix">
                 <div class="about-card">
                     <div class="card-step-num">01 <i class="fa-solid fa-user"></i></div>
                     <div>
-                        <div class="card-title">소개</div>
-                        <p class="card-text">덜 힘들고 더 잘하는 방법을 찾아 데이터까지 파고드는 효율 추구형 인간. 고민을 스포츠테크의 더 나은 제품과 서비스로 연결합니다.</p>
+                        <div class="card-title">핵심 정체성</div>
+                        <p class="card-text">효율 추구형 인재<br>현장 문제의 데이터화<br>스포츠테크 서비스 연결</p>
                     </div>
                 </div>
 
                 <div class="about-card">
                     <div class="card-step-num">02 <i class="fa-solid fa-compass"></i></div>
                     <div>
-                        <div class="card-title">관심 분야</div>
-                        <p class="card-text">스포츠 현장에서 발생하는 다양한 페인포인트를 해결하기 위한 데이터 기반 기획 및 최적화 연구.</p>
+                        <div class="card-title">주요 관심 분야</div>
                         <div class="tag-wrap">
                             <span class="chip-tag coral">데이터 분석</span>
                             <span class="chip-tag coral">운동역학</span>
                             <span class="chip-tag coral">스포츠테크</span>
+                            <span class="chip-tag coral">UI/UX 기획</span>
                         </div>
                     </div>
                 </div>
@@ -935,13 +973,12 @@
                 <div class="about-card">
                     <div class="card-step-num">03 <i class="fa-solid fa-gem"></i></div>
                     <div>
-                        <div class="card-title">핵심 강점</div>
-                        <p class="card-text">섬세한 시각과 깊은 배려심, 계획에 그치지 않고 즉시 구체화하는 확실한 실행력과 성실함.</p>
+                        <div class="card-title">4대 강점 키워드</div>
                         <div class="tag-wrap">
                             <span class="chip-tag">섬세함</span>
-                            <span class="chip-tag">배려</span>
+                            <span class="chip-tag">배려심</span>
                             <span class="chip-tag">실행력</span>
-                            <span class="chip-tag">성실</span>
+                            <span class="chip-tag">성실함</span>
                         </div>
                     </div>
                 </div>
@@ -949,10 +986,9 @@
                 <div class="about-card">
                     <div class="card-step-num">04 <i class="fa-solid fa-bullseye"></i></div>
                     <div>
-                        <div class="card-title">희망 직무</div>
-                        <p class="card-text">스포츠 현장의 문제점들을 데이터와 콘텐츠 기획으로 풀어내는 핵심 도메인 전문가 성장.</p>
+                        <div class="card-title">목표 희망 직무</div>
                         <div class="tag-wrap">
-                            <span class="chip-tag">연구</span>
+                            <span class="chip-tag">연구 트레이닝</span>
                             <span class="chip-tag">데이터 분석</span>
                             <span class="chip-tag">콘텐츠 기획</span>
                         </div>
@@ -961,60 +997,103 @@
             </div>
         </div>
 
-        <!-- SLIDE 3: 02 SKILLS & TOOLS -->
+        <!-- SLIDE 3: 02 SKILLS & GRAPH METRICS -->
         <div class="slide-card" id="skills">
             <div class="sec-header">
                 <span class="sec-num">02.</span>
                 <h2 class="sec-title">Skills & Capabilities</h2>
-                <span class="sec-sub">보유 기술 및 활용 도구</span>
+                <span class="sec-sub">역량별 그래픽 시각화 지표</span>
             </div>
 
             <div class="skills-grid">
                 <div class="skill-panel accent">
                     <div class="skill-head"><i class="fa-solid fa-chart-pie" style="color:var(--coral-accent)"></i> 데이터 분석 (Data Analytics)</div>
-                    <div class="skill-pills">
-                        <span class="spill">파이썬 (Python)</span>
-                        <span class="spill">비쥬얼 3D (Visual 3D)</span>
+                    
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>파이썬 (Python) - 데이터 정제 & 시각화</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill coral" style="width: 85%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>비쥬얼 3D (Visual 3D) - 운동역학 데이터</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill coral" style="width: 80%;"></div></div>
                     </div>
                 </div>
 
                 <div class="skill-panel">
-                    <div class="skill-head"><i class="fa-solid fa-pen-nib" style="color:var(--navy-primary)"></i> 디자인 & 영상 (Design & Media)</div>
-                    <div class="skill-pills">
-                        <span class="spill">Figma</span>
-                        <span class="spill">CapCut</span>
-                        <span class="spill">Canva</span>
-                        <span class="spill">미리캔버스</span>
+                    <div class="skill-head"><i class="fa-solid fa-pen-nib" style="color:var(--navy-primary)"></i> 디자인 & 프로토타이핑 (Design & UI)</div>
+                    
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>Figma (UI/UX 앱 화면 설계)</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>CapCut / 미리캔버스 (영상 및 홍보물)</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
                     </div>
                 </div>
 
                 <div class="skill-panel">
                     <div class="skill-head"><i class="fa-solid fa-robot" style="color:var(--navy-primary)"></i> AI & 생산성 도구 (Productivity)</div>
-                    <div class="skill-pills">
-                        <span class="spill">챗GPT</span>
-                        <span class="spill">제미나이</span>
-                        <span class="spill">Google Apps Studio</span>
-                        <span class="spill">한글</span>
+                    
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>챗GPT / 제미나이 (프롬프트 활용)</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>Google Apps Studio / 한글</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
                     </div>
                 </div>
 
                 <div class="skill-panel">
-                    <div class="skill-head"><i class="fa-solid fa-dumbbell" style="color:var(--navy-primary)"></i> 운동 · 스포츠 지도 (Coaching)</div>
-                    <div class="skill-pills">
-                        <span class="spill">크로스핏</span>
-                        <span class="spill">웨이트 트레이닝</span>
-                        <span class="spill">체대입시 종목</span>
+                    <div class="skill-head"><i class="fa-solid fa-dumbbell" style="color:var(--navy-primary)"></i> 스포츠 지도 (Coaching & Fitness)</div>
+                    
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>웨이트 트레이닝 & 크로스핏</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-info">
+                            <span>체대입시 종목 실기 지도</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 4: 03 PROJECTS & EXPERIENCE -->
+        <!-- SLIDE 4: 03 PROJECTS & VISUAL CARDS -->
         <div class="slide-card" id="projects">
             <div class="sec-header">
                 <span class="sec-num">03.</span>
                 <h2 class="sec-title">Projects & Major Experience</h2>
-                <span class="sec-sub">사진 및 동영상 자료가 포함된 프로젝트 기록</span>
+                <span class="sec-sub">사진 / 동영상 시각 자료 중심 프로젝트</span>
             </div>
 
             <div class="project-list">
@@ -1033,34 +1112,40 @@
                     <div class="project-item-body">
                         <div class="project-info-sec">
                             <div>
-                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 활동 내용 및 담당 역할</div>
-                                <p class="project-desc-text">제21회 공중화장실 혁신 아이디어 공모전 참여. 새벽 시간 닫혀있는 공중화장실을 QR로 입장하고, 사용 리뷰 작성 시 휴지 제공 및 설문지 작성 시 랜덤박스를 제공하는 피드백 기반 웹서비스 기획.</p>
+                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 프로젝트 개요 및 역할</div>
+                                <ul class="clause-bullets">
+                                    <li>제21회 공중화장실 혁신 아이디어 공모전 참여</li>
+                                    <li>QR 입장 및 리뷰-보상 기반 웹서비스 기획</li>
+                                    <li>Figma 활용 UI/UX 서비스 디자인 전담</li>
+                                    <li>소프트웨어/컴퓨터공학과 개발팀 협업</li>
+                                </ul>
                             </div>
-                            <ul class="role-bullets">
-                                <li><strong>담당 역할:</strong> 서비스 디자인 및 기획 (Figma 활용 UI/UX 제작)</li>
-                                <li>소프트웨어학과 및 컴퓨터공학과와의 팀 협업을 통한 프로젝트 구현</li>
-                            </ul>
+                            <div class="project-visual-badges">
+                                <div class="pbadge-box"><i class="fa-solid fa-qrcode"></i> QR 스마트 출입</div>
+                                <div class="pbadge-box coral"><i class="fa-solid fa-gift"></i> 피드백 보상 매칭</div>
+                            </div>
                         </div>
+
                         <div class="insight-card-box">
-                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 핵심 인사이트</div>
+                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 핵심 인사이트 (구 단위)</div>
                             <ul class="insight-bullets">
-                                <li>소프트웨어·컴공과의 협업으로 프론트엔드/백엔드 개발 프로세스 구조 체득</li>
-                                <li>웹서비스 구축 시 AI 판단을 뒷받침할 신뢰성 있는 자료와 타겟층 요구에 대한 명확한 근거의 중요성 파악</li>
+                                <li>프론트/백엔드 개발 프로세스 구조 체득</li>
+                                <li>AI 판단 뒷받침용 데이터 근거 확보 중요성 파악</li>
+                                <li>사용자 경험(UX) 중심의 피드백 루프 설계</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- GALLERY 1 -->
                     <div class="project-gallery-sec">
-                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (사진 / 영상)</div>
+                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (시연 영상 & 메인 슬라이드)</div>
                         <div class="gallery-grid">
                             <div class="gallery-card">
-                                <video src="화장실프로젝트.mp4" controls poster="화장실프로젝트1.jpg"></video>
-                                <div class="gallery-card-caption">화장실프로젝트 (시연 영상)</div>
+                                <video src="화장실프로젝트.mp4" controls poster="화장실프로젝트1.png"></video>
+                                <div class="gallery-card-caption">화장실프로젝트 (웹 시연 영상)</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="화장실프로젝트1.jpg" alt="화장실프로젝트1 (Qlean 메인)">
-                                <div class="gallery-card-caption">화장실프로젝트1 (Qlean 메인)</div>
+                                <img src="화장실프로젝트1.png" alt="화장실프로젝트1" onerror="this.onerror=null; this.src='화장실프로젝트1.jpg';">
+                                <div class="gallery-card-caption">Qlean 메인 아이디어 슬라이드</div>
                             </div>
                         </div>
                     </div>
@@ -1080,33 +1165,40 @@
                     <div class="project-item-body">
                         <div class="project-info-sec">
                             <div>
-                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 활동 내용 및 담당 역할</div>
-                                <p class="project-desc-text">'헬스케어정보수집' 전공 수업 발표 아이디어를 바탕으로 상월곡 실버복지센터와 연계하여 성북구 주민 200명의 시니어분들이 참여한 체력측정행사를 성공적으로 기획·운영했습니다.</p>
+                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 프로젝트 개요 및 역할</div>
+                                <ul class="clause-bullets">
+                                    <li>헬스케어 수업 아이디어 기반 외부 연계 기획</li>
+                                    <li>상월곡 실버복지센터 연계 200명 대상 개최</li>
+                                    <li>시니어 맞춤 종목 기획 및 안전 시뮬레이션</li>
+                                    <li>현장 사전교육, 준비운동 대표 진행, 측정 운영</li>
+                                </ul>
                             </div>
-                            <ul class="role-bullets">
-                                <li><strong>담당 역할:</strong> 시니어 하이록스 기획, 시뮬레이션 기획, 인원 모집, 사전교육 진행, 준비운동 대표 진행, 행사 측정 도우미</li>
-                            </ul>
+                            <div class="project-visual-badges">
+                                <div class="pbadge-box coral"><i class="fa-solid fa-users"></i> 성북구 주민 200명 참여</div>
+                                <div class="pbadge-box"><i class="fa-solid fa-shield-halved"></i> 시니어 안전동선 가이드</div>
+                            </div>
                         </div>
+
                         <div class="insight-card-box">
-                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 핵심 인사이트</div>
+                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 핵심 인사이트 (구 단위)</div>
                             <ul class="insight-bullets">
-                                <li>시니어분들에게 맞는 종목 선정 및 시간 랩스에 쫓기지 않는 안전 가이드라인 설계 학습</li>
-                                <li>외부 복지센터와의 협업 소통 노하우 및 2분 제자리걷기 종목 딜레이 최소화, 대기 시간 레크레이션 요소 필요성 등 대규모 행사 운영 리스크 관리 경험</li>
+                                <li>시니어 맞춤형 종목 및 시간 랩스 가이드 설계</li>
+                                <li>외부 복지기관 협업 소통 노하우 수립</li>
+                                <li>대기시간 최소화 및 레크리에이션 리스크 관리</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- GALLERY 2 -->
                     <div class="project-gallery-sec">
-                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (현장 사진)</div>
+                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (측정 현장 & 단체 사진)</div>
                         <div class="gallery-grid">
                             <div class="gallery-card">
-                                <img src="시니어하이록스1.jpg" alt="시니어하이록스1 (체력측정 현장)">
-                                <div class="gallery-card-caption">시니어하이록스1 (측정 현장)</div>
+                                <img src="시니어하이록스1.png" alt="시니어하이록스1" onerror="this.onerror=null; this.src='시니어하이록스1.jpg';">
+                                <div class="gallery-card-caption">시니어 체력 측정 현장</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="시니어하이록스2.jpg" alt="시니어하이록스2 (단체 기념사진)">
-                                <div class="gallery-card-caption">시니어하이록스2 (단체 기념사진)</div>
+                                <img src="시니어하이록스2.JPG" alt="시니어하이록스2" onerror="this.onerror=null; this.src='시니어하이록스2.jpg';">
+                                <div class="gallery-card-caption">상월곡 시니어 튼튼 체력장 단체샷</div>
                             </div>
                         </div>
                     </div>
@@ -1126,42 +1218,48 @@
                     <div class="project-item-body">
                         <div class="project-info-sec">
                             <div>
-                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 활동 내용 및 담당 역할</div>
-                                <p class="project-desc-text">스포츠마케팅동아리 SPARK의 FC서울 협업 프로젝트. 2030 세대의 지속적인 축구 관람 유도를 위한 산학 협업 마케팅 추진.</p>
+                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 프로젝트 개요 및 역할</div>
+                                <ul class="clause-bullets">
+                                    <li>FC서울 산학 협업 2030 관람 모객 마케팅</li>
+                                    <li>인천전 대학생 단체관람 모객 홍보영상 제작</li>
+                                    <li>구글폼 모객 시스템 구축 및 예산 관리</li>
+                                    <li>경쟁 PT 대비 4P 조사 및 QR 설문 제작</li>
+                                </ul>
                             </div>
-                            <ul class="role-bullets">
-                                <li><strong>대학생 모객 (vs 인천유나이티드):</strong> 구글폼 제작, 예산 관리, 홍보 영상 제작</li>
-                                <li><strong>타겟팅 경쟁 PT:</strong> QR 설문지 제작, 예산 및 4P 자료조사</li>
-                            </ul>
+                            <div class="project-visual-badges">
+                                <div class="pbadge-box"><i class="fa-solid fa-bullseye"></i> 2030 타깃 4P 전략</div>
+                                <div class="pbadge-box coral"><i class="fa-solid fa-ticket"></i> 경기장 직관 모객</div>
+                            </div>
                         </div>
+
                         <div class="insight-card-box">
-                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 핵심 인사이트</div>
+                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 핵심 인사이트 (구 단위)</div>
                             <ul class="insight-bullets">
-                                <li>신뢰성 높은 데이터 탐색 및 모객용 질문 설계 지식 터득</li>
-                                <li>축구 팬덤 문화와 스포츠 타겟층 특성에 대한 이해를 바탕으로 한 모객 기획 역량 확보</li>
+                                <li>데이터 기반 설문 설계 및 질문 구조화</li>
+                                <li>축구 팬덤 문화 이해 기반 모객 역량 확보</li>
+                                <li>산학 협업 경쟁 PT 발표 자료 구축</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- GALLERY 3 -->
                     <div class="project-gallery-sec">
-                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (현장 & 포스터)</div>
+                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (월드컵경기장 직관 & 포스터)</div>
                         <div class="gallery-grid">
                             <div class="gallery-card">
-                                <img src="스파크1.jpg" alt="스파크1 (서울월드컵경기장 직관 현장)">
-                                <div class="gallery-card-caption">스파크1 (경기장 직관 현장)</div>
+                                <img src="스파크1.JPG" alt="스파크1" onerror="this.onerror=null; this.src='스파크1.jpg';">
+                                <div class="gallery-card-caption">서울월드컵경기장 현장 직관</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="스파크2.jpg" alt="스파크2 (MATCH DAY 포스터)">
-                                <div class="gallery-card-caption">스파크2 (MATCH DAY)</div>
+                                <img src="스파크2.PNG" alt="스파크2" onerror="this.onerror=null; this.src='스파크2.jpg';">
+                                <div class="gallery-card-caption">MATCH DAY 메인 포스터</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="스파크3.jpg" alt="스파크3 (단체관람 EVENT)">
-                                <div class="gallery-card-caption">스파크3 (단체관람 EVENT)</div>
+                                <img src="스파크3.PNG" alt="스파크3" onerror="this.onerror=null; this.src='스파크3.jpg';">
+                                <div class="gallery-card-caption">단체관람 EVENT 포스터</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="스파크4.jpg" alt="스파크4 (인스타그램 이벤트)">
-                                <div class="gallery-card-caption">스파크4 (인증샷 이벤트)</div>
+                                <img src="스파크4.PNG" alt="스파크4" onerror="this.onerror=null; this.src='스파크4.jpg';">
+                                <div class="gallery-card-caption">인스타그램 태그 이벤트 포스터</div>
                             </div>
                         </div>
                     </div>
@@ -1180,37 +1278,44 @@
                     <div class="project-item-body">
                         <div class="project-info-sec">
                             <div>
-                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 활동 내용 및 담당 역할</div>
-                                <p class="project-desc-text">SDGs(건강과 웰빙) 기반 사회혁신 프로젝트. 스포츠 전공 지식을 살려 '10분으로 완성하는 최적 수면 프로젝트'를 구상 및 기획.</p>
+                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 프로젝트 개요 및 역할</div>
+                                <ul class="clause-bullets">
+                                    <li>SDGs(건강과 웰빙) 사회혁신 수면 프로젝트</li>
+                                    <li>'10분 최적 수면' 아이디어 및 콘텐츠 구상</li>
+                                    <li>기획안 작성, 일정 수립, 캐릭터 제작</li>
+                                    <li>수면 질 향상 '코~자라 키트' 구성</li>
+                                </ul>
                             </div>
-                            <ul class="role-bullets">
-                                <li><strong>담당 역할:</strong> 기획안 작성, 자료조사, 일정 구체화, 캐릭터 및 키트 제작</li>
-                            </ul>
+                            <div class="project-visual-badges">
+                                <div class="pbadge-box coral"><i class="fa-solid fa-moon"></i> 10분 수면케어</div>
+                                <div class="pbadge-box"><i class="fa-solid fa-box-open"></i> 수면 자라키트 제작</div>
+                            </div>
                         </div>
+
                         <div class="insight-card-box">
-                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 핵심 인사이트</div>
+                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 핵심 인사이트 (구 단위)</div>
                             <ul class="insight-bullets">
-                                <li>기존 앱을 활용한 신규 수면 콘텐츠 제작, 프로젝트 일정 및 예산 수립 전 과정 정밀 체험</li>
-                                <li>사용자 유입 및 구체화를 위한 매력적인 후킹 포인트(Hooking Point) 설계의 필요성 파악</li>
+                                <li>신규 수면 콘텐츠 개발 프로세스 주도</li>
+                                <li>프로젝트 일정 및 예산 수립 정밀 체험</li>
+                                <li>사용자 유입용 후킹 포인트(Hooking Point) 설계</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- GALLERY 4 -->
                     <div class="project-gallery-sec">
-                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (제안서 슬라이드)</div>
+                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (제안서 슬라이드 시각자료)</div>
                         <div class="gallery-grid">
                             <div class="gallery-card">
-                                <img src="서울임팩트프로젝트1.jpg" alt="서울임팩트프로젝트1 (표지)">
-                                <div class="gallery-card-caption">서울임팩트1 (표지)</div>
+                                <img src="서울임팩트프로젝트1.png" alt="서울임팩트프로젝트1" onerror="this.onerror=null; this.src='서울임팩트프로젝트1.jpg';">
+                                <div class="gallery-card-caption">서울임팩트 제안서 표지</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="서울임팩트프로젝트2.jpg" alt="서울임팩트프로젝트2 (코~스트레칭 + 자라 키트)">
-                                <div class="gallery-card-caption">서울임팩트2 (해결전략/키트)</div>
+                                <img src="서울임팩트프로젝트2.png" alt="서울임팩트프로젝트2" onerror="this.onerror=null; this.src='서울임팩트프로젝트2.jpg';">
+                                <div class="gallery-card-caption">해결전략 (스트레칭 + 자라 키트)</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="서울임팩트프로젝트3.jpg" alt="서울임팩트프로젝트3 (슬립 사이클 분석)">
-                                <div class="gallery-card-caption">서울임팩트3 (슬립 사이클)</div>
+                                <img src="서울임팩트프로젝트3.png" alt="서울임팩트프로젝트3" onerror="this.onerror=null; this.src='서울임팩트프로젝트3.jpg';">
+                                <div class="gallery-card-caption">해결전략 (슬립 사이클 분석)</div>
                             </div>
                         </div>
                     </div>
@@ -1230,44 +1335,52 @@
                     <div class="project-item-body">
                         <div class="project-info-sec">
                             <div>
-                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 활동 내용 및 담당 역할</div>
-                                <p class="project-desc-text">평소 스포츠 현장 및 일상에서 느꼈던 불편함과 아이디어를 발굴하고 디자인씽킹 기법으로 실제 앱 프로토타입까지 제작하는 활동.</p>
+                                <div class="project-label"><i class="fa-solid fa-circle-info"></i> 프로젝트 개요 및 역할</div>
+                                <ul class="clause-bullets">
+                                    <li>현장 페인포인트 발굴 및 디자인씽킹 적용</li>
+                                    <li>학생 · 학부모 · 강사 3종 모드 앱 구현</li>
+                                    <li>출결, 성장 리포트, 목표 대학 연동 기획</li>
+                                    <li>Figma UI 프로토타입 직접 제작</li>
+                                </ul>
                             </div>
-                            <ul class="role-bullets">
-                                <li><strong>담당 역할:</strong> 아이디어 기획, 핵심 기능 설계, 앱 프로토타입 제작 (학생/학부모/강사 모드)</li>
-                            </ul>
+                            <div class="project-visual-badges">
+                                <div class="pbadge-box"><i class="fa-solid fa-user-graduate"></i> 학생 / 학부모 / 강사 모드</div>
+                                <div class="pbadge-box coral"><i class="fa-solid fa-chart-line"></i> 성과 리포트 UI</div>
+                            </div>
                         </div>
+
                         <div class="insight-card-box">
-                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 핵심 인사이트</div>
+                            <div class="project-label"><i class="fa-solid fa-lightbulb"></i> 핵심 인사이트 (구 단위)</div>
                             <ul class="insight-bullets">
-                                <li>현장의 불편함을 사용자의 관점에서 정의하고 지속적으로 모듈을 개선하는 프레임워크 학습</li>
+                                <li>사용자 관점 현장 페인포인트 정밀 정의</li>
+                                <li>디자인씽킹 프레임워크 실전 적용</li>
+                                <li>모듈별 UI/UX 지속적 개선 노하우</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- GALLERY 5 -->
                     <div class="project-gallery-sec">
-                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (앱 프로토타입 UI)</div>
+                        <div class="gallery-title"><i class="fa-solid fa-images"></i> 프로젝트 미디어 (앱 프로토타입 UI 슬라이드)</div>
                         <div class="gallery-grid">
                             <div class="gallery-card">
-                                <img src="체대입시앱0.jpg" alt="체대입시앱0 (타이틀)">
-                                <div class="gallery-card-caption">체대입시앱0 (타이틀)</div>
+                                <img src="체대입시앱0.png" alt="체대입시앱0" onerror="this.onerror=null; this.src='체대입시앱0.jpg';">
+                                <div class="gallery-card-caption">체대입시 학원 관리앱 타이틀</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="체대입시앱1.png" alt="체대입시앱1 (학생 화면)">
-                                <div class="gallery-card-caption">체대입시앱1 (학생 화면)</div>
+                                <img src="체대입시앱1.png" alt="체대입시앱1" onerror="this.onerror=null; this.src='체대입시앱1.jpg';">
+                                <div class="gallery-card-caption">학생용 화면 (목표 대학 달성률)</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="체대입시앱2.png" alt="체대입시앱2 (강사 화면)">
-                                <div class="gallery-card-caption">체대입시앱2 (강사 화면)</div>
+                                <img src="체대입시앱2.png" alt="체대입시앱2" onerror="this.onerror=null; this.src='체대입시앱2.jpg';">
+                                <div class="gallery-card-caption">강사용 화면 (출결 및 빠른메뉴)</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="체대입시앱3.png" alt="체대입시앱3 (학부모 화면)">
-                                <div class="gallery-card-caption">체대입시앱3 (학부모 화면)</div>
+                                <img src="체대입시앱3.png" alt="체대입시앱3" onerror="this.onerror=null; this.src='체대입시앱3.jpg';">
+                                <div class="gallery-card-caption">학부모용 화면 (성장 리포트)</div>
                             </div>
                             <div class="gallery-card">
-                                <img src="체대입시앱4.jpg" alt="체대입시앱4 (로그인 화면)">
-                                <div class="gallery-card-caption">체대입시앱4 (로그인 화면)</div>
+                                <img src="체대입시앱4.png" alt="체대입시앱4" onerror="this.onerror=null; this.src='체대입시앱4.jpg';">
+                                <div class="gallery-card-caption">로그인 및 유형 선택 화면</div>
                             </div>
                         </div>
                     </div>
@@ -1281,35 +1394,34 @@
             <div class="sec-header">
                 <span class="sec-num">04.</span>
                 <h2 class="sec-title">Career & Activities</h2>
-                <span class="sec-sub">학력, 경력 및 다양한 대외활동</span>
+                <span class="sec-sub">간결한 구 단위 이력 기록</span>
             </div>
 
             <div class="timeline-grid">
-                <!-- CAREER & EDUCATION -->
                 <div class="timeline-col">
                     <div class="timeline-col-head"><i class="fa-solid fa-briefcase"></i> 학력 및 경력</div>
                     <div class="timeline-list">
                         <div class="timeline-row">
                             <div class="timeline-step coral">1</div>
                             <div>
-                                <div class="timeline-content-title">위너스체대입시학원 노원점</div>
-                                <div class="timeline-content-sub">메인강사 | 2024.03 ~ 현재 재직중</div>
+                                <div class="timeline-content-title">위너스체대입시학원 노원점 메인강사</div>
+                                <div class="timeline-content-sub">실기 지도 및 학원생 관리 | 2024.03 ~ 재직중</div>
                             </div>
                         </div>
 
                         <div class="timeline-row">
                             <div class="timeline-step">2</div>
                             <div>
-                                <div class="timeline-content-title">휘트니스피플 이수점</div>
-                                <div class="timeline-content-sub">트레이너 (운동지도, 현장관리, 세일즈) | 2025.07 ~ 2025.12</div>
+                                <div class="timeline-content-title">휘트니스피플 이수점 트레이너</div>
+                                <div class="timeline-content-sub">운동 지도, 현장 관리, 세일즈 | 2025.07 ~ 2025.12</div>
                             </div>
                         </div>
 
                         <div class="timeline-row">
                             <div class="timeline-step">3</div>
                             <div>
-                                <div class="timeline-content-title">서경대학교</div>
-                                <div class="timeline-content-sub">스포츠앤테크놀로지학과 재학</div>
+                                <div class="timeline-content-title">서경대학교 스포츠앤테크놀로지학과</div>
+                                <div class="timeline-content-sub">학사 재학 중</div>
                             </div>
                         </div>
 
@@ -1323,14 +1435,13 @@
                     </div>
                 </div>
 
-                <!-- ACTIVITIES & RESEARCH -->
                 <div class="timeline-col">
-                    <div class="timeline-col-head"><i class="fa-solid fa-flask"></i> 연구 활동 & 봉사·대외활동</div>
+                    <div class="timeline-col-head"><i class="fa-solid fa-flask"></i> 연구 활동 & 대외활동</div>
                     <div class="timeline-list">
                         <div class="timeline-row">
                             <div class="timeline-step coral">1</div>
                             <div>
-                                <div class="timeline-content-title">moty V 등속모드/일반모드 효과 비교 분석 연구</div>
+                                <div class="timeline-content-title">moty V 등속모드/일반모드 효과 비교 분석</div>
                                 <div class="timeline-content-sub">연구트레이너 활동</div>
                             </div>
                         </div>
@@ -1338,15 +1449,15 @@
                         <div class="timeline-row">
                             <div class="timeline-step">2</div>
                             <div>
-                                <div class="timeline-content-title">서경대 창의산학교육원 서포터즈</div>
-                                <div class="timeline-content-sub">서포터즈 1기, 2기 활동 (비교과 체험 브이로그 기획/제작)</div>
+                                <div class="timeline-content-title">서경대 창의산학교육원 서포터즈 1·2기</div>
+                                <div class="timeline-content-sub">비교과 체험 브이로그 기획 및 제작</div>
                             </div>
                         </div>
 
                         <div class="timeline-row">
                             <div class="timeline-step">3</div>
                             <div>
-                                <div class="timeline-content-title">스포츠의학동아리 RE:fit</div>
+                                <div class="timeline-content-title">스포츠의학동아리 RE:fit & 마케팅동아리 SPARK</div>
                                 <div class="timeline-content-sub">동아리원 활동</div>
                             </div>
                         </div>
@@ -1354,26 +1465,9 @@
                         <div class="timeline-row">
                             <div class="timeline-step">4</div>
                             <div>
-                                <div class="timeline-content-title">스포츠마케팅동아리 SPARK</div>
-                                <div class="timeline-content-sub">동아리원 활동</div>
+                                <div class="timeline-content-title">성동구 복지관 체력측정평가</div>
+                                <div class="timeline-content-sub">봉사활동 지원</div>
                             </div>
-                        </div>
-
-                        <div class="timeline-row">
-                            <div class="timeline-step">5</div>
-                            <div>
-                                <div class="timeline-content-title">성동구 복지관</div>
-                                <div class="timeline-content-sub">체력측정평가 도우미 봉사활동</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SUPPORT GALLERY THUMBNAIL -->
-                    <div style="margin-top: 1.5rem; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
-                        <div class="gallery-title" style="margin-bottom: 0.6rem;"><i class="fa-solid fa-video"></i> 서포터즈 활동 썸네일</div>
-                        <div class="gallery-card" style="max-width: 260px;">
-                            <img src="서포터즈 영상.jpg" alt="서포터즈 영상 썸네일">
-                            <div class="gallery-card-caption">서포터즈의 비교과 체험 브이로그</div>
                         </div>
                     </div>
                 </div>
