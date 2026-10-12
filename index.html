@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박채원 | 포트폴리오 (Park Chae Won Portfolio)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #1B365D;
+            --primary-navy-dark: #0F2341;
+            --primary-navy-light: #2A4B7C;
+            --accent-coral: #E63946;
+            --accent-coral-hover: #D62839;
+            --accent-gold: #F4A261;
+            --bg-light: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 2px 4px rgba(27, 54, 93, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(27, 54, 93, 0.08), 0 8px 10px -6px rgba(27, 54, 93, 0.04);
+            --shadow-lg: 0 20px 30px -10px rgba(27, 54, 93, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(27, 54, 93, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-coral);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #E2E8F0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-coral);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 60%, var(--primary-navy-light) 100%);
+            color: #FFFFFF;
+            padding: 9rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.15) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(230, 57, 70, 0.2);
+            border: 1px solid var(--accent-coral);
+            color: #FF8A95;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 1.2rem;
+            word-break: keep-all;
+        }
+
+        .hero-title .highlight {
+            color: var(--accent-coral);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #CBD5E1;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            word-break: keep-all;
+        }
+
+        .hero-info-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #F1F5F9;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-card-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            color: #E2E8F0;
+        }
+
+        .hero-card-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .hero-card-list i {
+            color: var(--accent-coral);
+            margin-top: 4px;
+        }
+
+        /* SECTION LAYOUT */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-coral);
+            background: rgba(230, 57, 70, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(27, 54, 93, 0.08);
+            color: var(--primary-navy);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.8rem;
+        }
+
+        .tags-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .tag-item {
+            background: #F1F5F9;
+            color: var(--primary-navy);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #E2E8F0;
+        }
+
+        .tag-item.accent {
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--accent-coral);
+            border-color: rgba(230, 57, 70, 0.2);
+        }
+
+        /* SKILLS SECTION */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-box {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary-navy);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-box.accent-border {
+            border-left-color: var(--accent-coral);
+        }
+
+        .skill-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* PROJECTS SECTION */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: #CBD5E1;
+        }
+
+        .project-header {
+            background: #F8FAFC;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-title-group h3 {
+            font-size: 1.25rem;
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .p-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--accent-coral);
+        }
+
+        .project-body {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 868px) {
+            .project-body {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-sec-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .project-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .role-list, .learned-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.92rem;
+        }
+
+        .role-list li, .learned-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .role-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-navy);
+            font-weight: bold;
+        }
+
+        .learned-box {
+            background: #F1F5F9;
+            border-radius: var(--radius-sm);
+            padding: 1.2rem;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .learned-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-coral);
+            font-weight: bold;
+        }
+
+        /* CAREER & EDUCATION */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .timeline-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #F1F5F9;
+            padding-bottom: 0.8rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-navy);
+        }
+
+        .timeline-item.active::before {
+            background: var(--accent-coral);
+        }
+
+        .timeline-item-title {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .timeline-item-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.1rem;
+        }
+
+        /* CERTIFICATES & SCHOLARSHIPS */
+        .info-list-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-list-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .simple-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .simple-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0.8rem;
+            background: #F8FAFC;
+            border-radius: 6px;
+            font-size: 0.92rem;
+        }
+
+        .simple-list .date-badge {
+            font-size: 0.8rem;
+            background: #E2E8F0;
+            color: var(--text-muted);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
+            color: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-section p {
+            color: #CBD5E1;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            padding: 0.8rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-coral);
+            border-color: var(--accent-coral);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-chart-line"></i> PARK CHAE WON<span>.</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#credentials">Credentials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <div class="hero-badge">
+                    <i class="fa-solid fa-bolt"></i> Sports Tech & Data Analytics
+                </div>
+                <h1 class="hero-title">
+                    스포츠 현장의 물음표를 <span class="highlight">데이터</span>로 풀고,<br>
+                    기술로 <span class="highlight">느낌표</span>를 만드는 박채원입니다.
+                </h1>
+                <p class="hero-subtitle">
+                    덜 힘들고 더 잘하는 방법을 찾아 데이터까지 파고드는 효율 추구형 인재.<br>
+                    현장의 고민을 스포츠테크 분야의 더 나은 제품과 서비스로 연결합니다.
+                </p>
+                <div class="hero-info-pills">
+                    <div class="pill"><i class="fa-solid fa-graduation-cap"></i> 서경대학교 스포츠앤테크놀로지학과</div>
+                    <div class="pill"><i class="fa-solid fa-bullseye"></i> 연구 · 데이터 분석 · 콘텐츠 기획</div>
+                </div>
+            </div>
+
+            <!-- HERO QUICK INFO CARD -->
+            <div class="hero-card">
+                <div class="hero-card-title">
+                    <i class="fa-solid fa-star"></i> Core Strengths
+                </div>
+                <ul class="hero-card-list">
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>섬세함:</strong> 데이터와 문제점의 원인을 정밀하게 포착</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>실행력:</strong> 아이디어를 직접 앱 프로토타입/행사로 구현</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>성실 & 배려:</strong> 사용자 및 대상자 니즈에 맞춘 커뮤니케이션</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 01. ABOUT ME -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-num">01</span>
+                <div>
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">스포츠와 데이터, 그리고 사용자 경험을 연결하는 가치</p>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fa-solid fa-user"></i></div>
+                    <h3>소개 (Intro)</h3>
+                    <p>덜 힘들고 더 잘하는 방법을 찾아 데이터까지 파고드는 효율 추구형 인간입니다. 스포츠 현장에서 느낀 직관적 고민을 정밀한 데이터와 기술적 솔루션으로 풀어나갑니다.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fa-solid fa-compass"></i></div>
+                    <h3>관심 분야 (Interests)</h3>
+                    <p>스포츠 테크놀로지가 접목된 생태계와 데이터 기반 최적화에 깊은 관심을 가지고 있습니다.</p>
+                    <div class="tags-flex">
+                        <span class="tag-item accent">데이터 분석</span>
+                        <span class="tag-item accent">운동역학</span>
+                        <span class="tag-item accent">스포츠테크</span>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                    <h3>희망 직무 (Career Vision)</h3>
+                    <p>현장 감각과 분석 능력을 바탕으로 스포츠테크 생태계를 이끄는 핵심 인재로 성장하고자 합니다.</p>
+                    <div class="tags-flex">
+                        <span class="tag-item">연구</span>
+                        <span class="tag-item">데이터 분석</span>
+                        <span class="tag-item">콘텐츠 기획</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02. SKILLS -->
+    <section id="skills" style="background-color: #F1F5F9;">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <div>
+                    <h2 class="section-title">Skills & Tools</h2>
+                    <p class="section-subtitle">분석, 기획, 디자인 및 스포츠 지도를 아우르는 멀티 툴킷</p>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-box accent-border">
+                    <div class="skill-title"><i class="fa-solid fa-chart-pie" style="color:var(--accent-coral)"></i> 데이터 분석</div>
+                    <div class="tags-flex">
+                        <span class="tag-item accent">파이썬 (Python)</span>
+                        <span class="tag-item accent">비쥬얼 3D (Visual 3D)</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title"><i class="fa-solid fa-pen-nib" style="color:var(--primary-navy)"></i> 디자인 & 영상</div>
+                    <div class="tags-flex">
+                        <span class="tag-item">Figma</span>
+                        <span class="tag-item">CapCut</span>
+                        <span class="tag-item">Canva</span>
+                        <span class="tag-item">미리캔버스</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title"><i class="fa-solid fa-robot" style="color:var(--primary-navy)"></i> AI & 생산성 도구</div>
+                    <div class="tags-flex">
+                        <span class="tag-item">챗GPT</span>
+                        <span class="tag-item">제미나이</span>
+                        <span class="tag-item">Google Apps Studio</span>
+                        <span class="tag-item">한글</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title"><i class="fa-solid fa-dumbbell" style="color:var(--primary-navy)"></i> 운동 · 스포츠 지도</div>
+                    <div class="tags-flex">
+                        <span class="tag-item">크로스핏</span>
+                        <span class="tag-item">웨이트 트레이닝</span>
+                        <span class="tag-item">체대입시 종목</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03. PROJECTS & EXPERIENCE -->
+    <section id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-num">03</span>
+                <div>
+                    <h2 class="section-title">Projects & Major Experience</h2>
+                    <p class="section-subtitle">문제 정의부터 기획, 실행, 그리고 인사이트 도출까지의 주요 기록</p>
+                </div>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <h3><i class="fa-solid fa-restroom" style="color:var(--accent-coral)"></i> SKTHON - 공중화장실 혁신 프로젝트</h3>
+                        </div>
+                        <div class="project-tags">
+                            <span class="p-tag">#콘텐츠기획</span>
+                            <span class="p-tag">#서비스디자인</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-sec-title"><i class="fa-solid fa-file-lines"></i> 활동 내용 및 역할</div>
+                            <p class="project-text">
+                                제21회 공중화장실 혁신 아이디어 공모전 참여. 새벽 시간 닫혀있는 화장실을 QR로 입장하고, 리뷰 작성 시 휴지 제공 및 설문 응답 시 랜덤박스를 제공하는 피드백 기반 청결 관리 웹서비스를 기획했습니다.
+                            </p>
+                            <ul class="role-list">
+                                <li><strong>담당 역할:</strong> Figma를 활용한 서비스 디자인 및 기획</li>
+                                <li>소프트웨어학과 및 컴퓨터공학과 팀원들과의 협업 진행</li>
+                            </ul>
+                        </div>
+                        <div class="learned-box">
+                            <div class="project-sec-title"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 성장한 부분</div>
+                            <ul class="learned-list">
+                                <li>개발진(프론트엔드/백엔드)과의 실전 현장 협업을 통해 기술적 구조 이해도 확보</li>
+                                <li>AI 판단 및 웹서비스 구현 시 타겟층의 니즈와 신뢰성 있는 자료/근거 제시의 중요성 체득</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <h3><i class="fa-solid fa-heart-pulse" style="color:var(--accent-coral)"></i> 상월곡 실버복지센터 연계 시니어 하이록스 프로젝트</h3>
+                        </div>
+                        <div class="project-tags">
+                            <span class="p-tag">#콘텐츠기획</span>
+                            <span class="p-tag">#행사운영</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-sec-title"><i class="fa-solid fa-file-lines"></i> 활동 내용 및 역할</div>
+                            <p class="project-text">
+                                '헬스케어정보수집' 전공 수업 발표를 계기로 지역 복지센터와 연계하여 성북구 주민 200명이 참여한 체력측정행사를 성공적으로 기획·운영했습니다.
+                            </p>
+                            <ul class="role-list">
+                                <li><strong>담당 역할:</strong> 시니어 하이록스 종목 및 시뮬레이션 기획, 인원 모집, 사전교육, 준비운동 대표 진행, 측정 도우미</li>
+                            </ul>
+                        </div>
+                        <div class="learned-box">
+                            <div class="project-sec-title"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 성장한 부분</div>
+                            <ul class="learned-list">
+                                <li>시니어 특성을 고려한 종목 선정 및 안전 중심 측정 기준 설정 프로세스 체득</li>
+                                <li>외부 기관 협업 시 소통 방식 개선, 행사 병목 구간(2분 제자리걷기) 및 레크레이션 대기 요소 배치 등 현장 리스크 관리 역량 획득</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <h3><i class="fa-solid fa-futbol" style="color:var(--accent-coral)"></i> SPARK × FC서울 협업 마케팅 프로젝트</h3>
+                        </div>
+                        <div class="project-tags">
+                            <span class="p-tag">#콘텐츠기획</span>
+                            <span class="p-tag">#마케팅</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-sec-title"><i class="fa-solid fa-file-lines"></i> 활동 내용 및 역할</div>
+                            <p class="project-text">
+                                FC서울의 2030세대 지속 관람 유도를 목표로 한 산학 협업 스포츠 마케팅 프로젝트.
+                            </p>
+                            <ul class="role-list">
+                                <li><strong>경기 대학생 모객 (vs 인천유나이티드):</strong> 구글폼 신청 시스템 구축, 예산 관리, 홍보 영상 제작</li>
+                                <li><strong>타겟팅 경쟁 PT:</strong> QR 설문지 제작, 예산 및 4P 자료조사 담당</li>
+                            </ul>
+                        </div>
+                        <div class="learned-box">
+                            <div class="project-sec-title"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 성장한 부분</div>
+                            <ul class="learned-list">
+                                <li>신뢰성 높은 데이터 탐색 능력 및 모객용 질문 설계 지식 확보</li>
+                                <li>축구 팬덤 문화와 스포츠 타겟층 특성에 대한 깊은 이해 바탕의 기획력 배양</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <h3><i class="fa-solid fa-bed" style="color:var(--accent-coral)"></i> 서울임팩트프로젝트 - 코~자라 프로젝트</h3>
+                        </div>
+                        <div class="project-tags">
+                            <span class="p-tag">#콘텐츠기획</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-sec-title"><i class="fa-solid fa-file-lines"></i> 활동 내용 및 역할</div>
+                            <p class="project-text">
+                                SDGs(건강과 웰빙) 기반 사회혁신 프로젝트. 스포츠 전공을 살려 10분으로 수면의 질을 향상시키는 최적 수면 프로젝트 구상.
+                            </p>
+                            <ul class="role-list">
+                                <li><strong>담당 역할:</strong> 기획안 작성, 자료조사, 일정 구체화, 캐릭터 제작</li>
+                            </ul>
+                        </div>
+                        <div class="learned-box">
+                            <div class="project-sec-title"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 성장한 부분</div>
+                            <ul class="learned-list">
+                                <li>기존 앱을 활용한 신규 콘텐츠 제작 및 예산/일정 구체화 전 과정을 정밀하게 체험</li>
+                                <li>사용자 유입을 위한 강력한 후킹 포인트(Hooking Point) 설계의 핵심성 인식</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 5 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <h3><i class="fa-solid fa-mobile-screen-button" style="color:var(--accent-coral)"></i> 디자인씽킹 과제 - 앱 프로토타이핑</h3>
+                        </div>
+                        <div class="project-tags">
+                            <span class="p-tag">#콘텐츠기획</span>
+                            <span class="p-tag">#프로토타이핑</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-sec-title"><i class="fa-solid fa-file-lines"></i> 활동 내용 및 역할</div>
+                            <p class="project-text">
+                                일상 및 체대입시 관련 불편함을 발굴하고 디자인씽킹 방법론을 통해 실제 프로토타입으로 구현.
+                            </p>
+                            <ul class="role-list">
+                                <li><strong>담당 역할:</strong> 아이디어 기획, 핵심 기능 설계, 프로토타입 제작 및 피드백 반영</li>
+                            </ul>
+                        </div>
+                        <div class="learned-box">
+                            <div class="project-sec-title"><i class="fa-solid fa-lightbulb"></i> 배운 점 & 성장한 부분</div>
+                            <ul class="learned-list">
+                                <li>불편 요소를 문제 정의로 전환하고 앱 서비스 핵심 기능으로 체계화하는 역량 강화</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 04. EXPERIENCE & EDUCATION -->
+    <section id="experience" style="background-color: #F1F5F9;">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-num">04</span>
+                <div>
+                    <h2 class="section-title">Experience & Education</h2>
+                    <p class="section-subtitle">현장 지도 경험과 학술 활동의 조화</p>
+                </div>
+            </div>
+
+            <div class="two-col-grid">
+                <!-- EDUCATION & CAREER -->
+                <div class="timeline-card">
+                    <h3><i class="fa-solid fa-briefcase" style="color:var(--primary-navy)"></i> 학력 및 경력 (Career)</h3>
+                    
+                    <div class="timeline-item active">
+                        <div class="timeline-item-title">위너스체대입시학원 노원점</div>
+                        <div class="timeline-item-sub">메인강사 | 2024.03 ~ 현재 재직중</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-title">휘트니스피플 이수점</div>
+                        <div class="timeline-item-sub">트레이너 (운동지도 및 현장 관리, 세일즈, 고객 관리) | 2025.07 ~ 2025.12</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-title">서경대학교</div>
+                        <div class="timeline-item-sub">스포츠앤테크놀로지학과 재학</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-title">불암고등학교</div>
+                        <div class="timeline-item-sub">졸업</div>
+                    </div>
+                </div>
+
+                <!-- ACTIVITIES & RESEARCH -->
+                <div class="timeline-card">
+                    <h3><i class="fa-solid fa-flask" style="color:var(--accent-coral)"></i> 연구 및 활동 (Activities)</h3>
+                    
+                    <div class="timeline-item active">
+                        <div class="timeline-item-title">moty V 등속모드/일반모드 효과 비교 분석 연구</div>
+                        <div class="timeline-item-sub">연구트레이너 활동</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-title">스포츠의학동아리 RE:fit</div>
+                        <div class="timeline-item-sub">동아리원 활동</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-title">스포츠마케팅동아리 SPARK</div>
+                        <div class="timeline-item-sub">동아리원 활동</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-title">서경대 창의산학교육원 서포터즈</div>
+                        <div class="timeline-item-sub">서포터즈 1기, 2기 활동</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-title">성동구 복지관</div>
+                        <div class="timeline-item-sub">체력측정평가 도우미 봉사활동</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05. CREDENTIALS & AWARDS -->
+    <section id="credentials">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-num">05</span>
+                <div>
+                    <h2 class="section-title">Credentials & Scholarships</h2>
+                    <p class="section-subtitle">검증된 전문성과 성실함의 증명</p>
+                </div>
+            </div>
+
+            <div class="two-col-grid">
+                <div class="info-list-card">
+                    <h3><i class="fa-solid fa-certificate" style="color:var(--primary-navy)"></i> 자격증 (Certifications)</h3>
+                    <ul class="simple-list">
+                        <li>
+                            <span><strong>생활스포츠지도자 2급</strong> (보디빌딩)</span>
+                            <span class="date-badge">국가자격</span>
+                        </li>
+                        <li>
+                            <span><strong>FISAF 국제 퍼스널 트레이너 1급</strong></span>
+                            <span class="date-badge">국제자격</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-list-card">
+                    <h3><i class="fa-solid fa-award" style="color:var(--accent-gold)"></i> 장학 수혜 내역 (Scholarships)</h3>
+                    <ul class="simple-list">
+                        <li>
+                            <span>예술체육비전장학금 지원 I (등록금전형)</span>
+                            <span class="date-badge">2026-1학기</span>
+                        </li>
+                        <li>
+                            <span>노원교육복지재단 대학생장학금</span>
+                            <span class="date-badge">2026년도</span>
+                        </li>
+                        <li>
+                            <span>심명문화재단 생활비 장학금</span>
+                            <span class="date-badge">2026년도</span>
+                        </li>
+                        <li>
+                            <span>서울희망진로장학금</span>
+                            <span class="date-badge">2025-2학기</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06. CONTACT -->
+    <section id="contact" style="padding-bottom: 2rem;">
+        <div class="section-container">
+            <div class="contact-section">
+                <h2>Let's Connect & Collaborate!</h2>
+                <p>스포츠와 데이터, 테크놀로지를 함께 만들어갈 새로운 기회를 언제든 환영합니다.</p>
+                <div class="contact-links">
+                    <a href="mailto:won707105@skuniv.ac.kr" class="contact-btn">
+                        <i class="fa-solid fa-envelope"></i> won707105@skuniv.ac.kr
+                    </a>
+                    <a href="https://instagram.com/Mini_won47" target="_blank" class="contact-btn">
+                        <i class="fa-brands fa-instagram"></i> @Mini_won47
+                    </a>
+                    <a href="https://github.com/won707105" target="_blank" class="contact-btn">
+                        <i class="fa-brands fa-github"></i> GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Park Chae Won. All rights reserved. Designed for GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
